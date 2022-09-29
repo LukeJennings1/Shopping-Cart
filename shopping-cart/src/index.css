@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Edu+SA+Beginner:wght@700&family=Inconsolata:wght@300&family=Josefin+Sans&family=Kdam+Thmor+Pro&family=Oldenburg&family=Pacifico&family=Roboto:wght@700&display=swap');
+
+*{
+  /* background-color: rgb(20, 20, 20); */
+  margin: 0;
+  font-family:'Oldenburg', cursive;;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+}
+.HeaderWrapper {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 3;
+  color: white;
+  
+}
+#logo{
+  height: 70px;
+  width: 70px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+.linkWrapper{
+  display: flex;
+  gap: 15px;
+}
+#left-side-wrapper {
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+.awssld  {
+  height: 100vh;
+  position: absolute;
+  background-color: black;
+
+}
+/* .awssld__bullets{
+  display: none;
+  visibility: hidden;
+} */
