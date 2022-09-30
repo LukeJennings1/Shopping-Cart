@@ -24,7 +24,7 @@ html, body {
 #logo{
   height: 70px;
   width: 70px;
-  margin-right: -10px;
+  margin-right: -20px;
   margin-top: 5px;
 }
 .linkWrapper{
@@ -48,4 +48,26 @@ html, body {
 }
 .awssld__next, .awssld__prev {
   --organic-arrow-color: #ffffff;
+}
+.StoreWrapper {
+  background-image: url('./assets/pexels-pixabay-220755.jpg');
+  background-size:cover;
+  width: 100%;
+  height: 100vh;
+}
+#item1 {
+  width: 200px;
+  height: 200px;
+}
+
+.item1Wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 700px;
+}
+.itemWrappermain {
+  display: flex;
+  justify-content: center;
 }

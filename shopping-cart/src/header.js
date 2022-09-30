@@ -1,4 +1,6 @@
 import logo from './assets/icons8-compass-east-100.png'
+import storePage from './store'
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -10,8 +12,14 @@ function Header() {
                 <img id="logo" src={logo}></img>
                 </div>
             <div className="linkWrapper">
-                <button>Store // </button>
+                <Link to={'./store'}>
+                <button>Store // </button> 
+                </Link>
+                {/* need to setup router links for these */}
+                <Link to = {'/'}>
                 <button>Contact // </button>
+                </Link>
+              
             </div>
         </div>
     )
