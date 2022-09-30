@@ -19,33 +19,33 @@ html, body {
   position: absolute;
   z-index: 3;
   color: white;
-  
+  padding-top: 5px;
 }
 #logo{
   height: 70px;
   width: 70px;
-  margin-right: 50px;
-  margin-top: 20px;
+  margin-right: 40px;
+  margin-top: 5px;
 }
-
 .linkWrapper{
   display: flex;
   gap: 15px;
 }
 #left-side-wrapper {
   display: flex;
-  align-items: center;
-  display: flex;
-  align-items: center;
+  
 }
-
+.middleBanner{
+  z-index: 3;
+}
 .awssld  {
   height: 100vh;
   position: absolute;
   background-color: black;
-
 }
-/* .awssld__bullets{
-  display: none;
-  visibility: hidden;
-} */
+.firstBannerWrapper, .secondBannerWrapper {
+  z-index: 3;
+}
+.awssld__next, .awssld__prev {
+  --organic-arrow-color: #ffffff;
+}
