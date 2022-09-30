@@ -10,8 +10,8 @@ function Header() {
                 <img id="logo" src={logo}></img>
                 </div>
             <div className="linkWrapper">
-                <div>Shop</div>
-                <div>Contact</div>
+                <button>Store // </button>
+                <button>Contact // </button>
             </div>
         </div>
     )
