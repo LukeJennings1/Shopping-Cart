@@ -5,16 +5,19 @@ import Header from './header'
 import firstSliderBanner from './assets/banner3.jpg'
 import secondSliderBanner from './assets/cotton.jpg'
 import thirdSliderBanner from './assets/home range.jpg'
+import { createContext } from 'react';
 
 
 function Middle() {
+
+  
+
 
   const test = () => {
     console.log('hello')
   }
     return (
 <div className='sliderWrapper'>
-  
 
   <AwesomeSlider  bullets = {false} animation="cubeAnimation">
     <div className='firstBannerWrapper' data-src={firstSliderBanner}>

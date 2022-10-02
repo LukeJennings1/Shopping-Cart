@@ -1,10 +1,19 @@
 import Homepage from './homepage'
+import { createContext, useState } from 'react';
 
 
-function App() { // base routepage. 
+
+function App() { // base routepage.
+  
+ 
+
+
   return (
     <div className="App">
+
       <Homepage />
+
+
    </div>
   )
 }
