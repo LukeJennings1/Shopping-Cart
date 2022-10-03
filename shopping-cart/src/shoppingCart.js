@@ -4,16 +4,20 @@ import basketIcon from './assets/basket.png'
 import Header from  './header'
 import Cartlogic from './cartlogic'
 import { useState, createContext, useContext } from "react";
-
+import { ContextMake } from './RouteSwitch'
 
 
 function ShoppingCart(props) {
+    // const updatedValue = useContext(ContextMake);
 
+    const [updatedValue, setImportedValue] = useState(useContext(ContextMake))
 
     return (  
         <div className='BasketWrapper'>
         <Header />
-        <div>{props.item}</div>
+        
+        <div className='item'>{updatedValue}</div>
+
            </div>
       
     )
