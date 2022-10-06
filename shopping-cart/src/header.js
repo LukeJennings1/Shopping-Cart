@@ -9,12 +9,13 @@ function Header() {
             <div id='left-side-wrapper'>
                 <div id="websiteTitle">Point East Clothing</div>
                 </div>
+                
         <div className='middleHeaderWrapper'>
-        <Link to = {'/'}>
+                <Link to = {'/'}>
                <img id="logo" src={logo}></img>
-           </Link>
-    
+                </Link>
                 </div>
+
             <div className="linkWrapper">
                 <Link to={'/store'}>
                 <button>Store</button> 

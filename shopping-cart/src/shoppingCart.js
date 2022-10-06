@@ -3,23 +3,55 @@ import logo from './assets/icons8-compass-east-100.png'
 import basketIcon from './assets/basket.png'
 import Header from  './header'
 import Cartlogic from './cartlogic'
-import { useState, createContext, useContext } from "react";
-import { ContextMake } from './RouteSwitch'
+import { useState, createContext, useContext, useEffect } from "react";
+import { MakeContext } from './RouteSwitch'
+import item1 from './assets/item1.jpg'
 
 
-function ShoppingCart(props) {
-    // const updatedValue = useContext(ContextMake);
 
-    const [updatedValue, setImportedValue] = useState(useContext(ContextMake))
+function ShoppingCart() {
+
+    const [importedItem, ...rest] = useContext(MakeContext)
+    const [item1, setImportedValue] = useState(importedItem)
+    const [importedValue, setImportedValue2] = useContext(MakeContext)
+
+
+
+console.log(importedItem)
+
+const resetArray = () => {
+    setImportedValue(item1.splice(1))
+    setImportedValue2([])
+}
+// useEffect(() => {setImportedValue(importedValue)}, [item1])
 
     return (  
-        <div className='BasketWrapper'>
-        <Header />
-        
-        <div className='item'>{updatedValue}</div>
+    <>
+    <Header />
 
+        <div className='ShoppingCartBackground'>
+            
+            <fieldset className='ShoppingCartWrapper'>
+                <legend>    Shopping Basket    </legend>
+
+            <div className='itemCartWrapper'> 
+                {item1.map((elements) => {
+                return (
+                <div key={elements.id}>
+                    <div>{elements.item}</div>
+                    <div>{elements.price}</div>
+                    <div>{elements.quantity}</div>
+                    <button onClick={resetArray}>Remove</button>
+            </div>
+
+            )
+        })}  </div>
+
+
+            </fieldset>
+            
            </div>
-      
+    </>
     )
         
 }

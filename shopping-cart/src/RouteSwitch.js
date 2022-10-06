@@ -8,17 +8,16 @@ import ShoppingCart from './shoppingCart';
 import { useState, createContext, useContext } from "react";
 import { Context } from './context';
 
-export const ContextMake = createContext(null);
+export const MakeContext = createContext(null); // null is the default value. 
 
 
 function RouteSwitch()  {
-    const [value, setValue] = useState('')
-
+    const [value, setValue] = useState([])
 
 
     return (
         <BrowserRouter>
-        <ContextMake.Provider value = {[value, setValue]}>
+        <MakeContext.Provider value = {[value, setValue]}>
             <Routes>
                 <Route path='/' element = {<App />}></Route>
 
@@ -28,7 +27,7 @@ function RouteSwitch()  {
         
 
             </Routes>
-            </ContextMake.Provider>
+            </MakeContext.Provider>
         </BrowserRouter>
     )
 }
