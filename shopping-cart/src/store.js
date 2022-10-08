@@ -16,37 +16,35 @@ function Store() {
 
 const [importedValue, setImportedValue] = useContext(MakeContext)
 const [itemQuantity, setItemQuantity] = useState(1)
-const [id, setId] = useState(0)
+// const [id, setId] = useState(0)
 
 let itemNum1 = {
 item: 'Adventurers Cloak',
 price: '£' + 143.99,
 quantity: itemQuantity,
-id: id
+// id: id
 }
-useEffect(() => {setId( id + 1)}, [importedValue]); // updates the id on every value change
+
 
 // let itemNum2 = {item: 'T-Shirt', price: '£' + 56.76, id: 2}
+console.log(importedValue)
 
-const updateImportedValue = () => {
-if (id > 1) {
-    return (console.log('more-than-1'))
-} else {
-    return (
-        setImportedValue([...importedValue, itemNum1])
+function updateImportedValue() {
+    // var index = importedValue.map(importedValue => importedValue.item).indexOf('Adventurers Cloak');
+    // if (index < 0) {
+    // return (
+        setImportedValue([itemNum1])
+  
 
-    )
-}
 }
 const subtract = () => {
-    console.log(itemNum1.quantity)
+    if (itemQuantity > 1) {
     setItemQuantity(itemQuantity -1)
+    }
 }
 const add = () => {
-    console.log(itemNum1.quantity)
     setItemQuantity(itemQuantity +1)
 }
-
  return (
     <>
 
@@ -59,14 +57,13 @@ const add = () => {
             
             <img id = 'item1' src={item1}></img>
         <div className='itemDetailsWrapper'>
-    {/* <div className='importedValue'>{importedValue}</div> // this will show the item on this page */}
 
             <div className='itemTitle'>Item Name</div>
             <div id = 'item1Details'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con.</div>
         <div className='amountButtons'>
             <button onClick={subtract}>-</button><div>{itemNum1.quantity}</div><button onClick={add}>+</button>
         </div>
-            <button className='addToCart' onClick = {updateImportedValue}>Add To Cart</button>
+            <button className='addToCart' onClick = {() => {updateImportedValue()}}>Add To Cart</button>
 
         </div>
         </div>
