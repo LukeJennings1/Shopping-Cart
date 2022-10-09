@@ -9,33 +9,37 @@ import RouteSwitch from './RouteSwitch'
 import { useState, createContext, useContext, useEffect } from "react";
 import { MakeContext } from './RouteSwitch'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import binIcon from './assets/bin.png'
 
 
 function Store() {
 
 const [importedValue, setImportedValue] = useContext(MakeContext)
 const [itemQuantity, setItemQuantity] = useState(1)
-// const [id, setId] = useState(0)
+const [id, setId] = useState(0)
 
 let itemNum1 = {
 item: 'Adventurers Cloak',
 price: '£' + 143.99,
 quantity: itemQuantity,
-// id: id
+button: () => {
+    return (
+        <input type='image' src={binIcon} className = 'itemBinIcon' onClick={(index) => {
+            const removeFromArray = importedValue.slice(index)
+            setImportedValue(removeFromArray)
+        }}></input>
+    )
 }
-
-
+}
 // let itemNum2 = {item: 'T-Shirt', price: '£' + 56.76, id: 2}
-console.log(importedValue)
 
 function updateImportedValue() {
-    // var index = importedValue.map(importedValue => importedValue.item).indexOf('Adventurers Cloak');
-    // if (index < 0) {
-    // return (
+    var index = importedValue.map(importedValue => importedValue.item).indexOf('Adventurers Cloak');
+    if (index < 0) {
+    return (
         setImportedValue([itemNum1])
-  
-
+    )
+    }
 }
 const subtract = () => {
     if (itemQuantity > 1) {
@@ -46,13 +50,11 @@ const add = () => {
     setItemQuantity(itemQuantity +1)
 }
  return (
-    <>
-
-     <div className='StoreWrapper'>
+<>
+<div className='StoreWrapper'>
                 
-    
         <Header />
-<div className='itemWrappermain'>
+    <div className='itemWrappermain'>
         <div className='item1Wrapper'>
             
             <img id = 'item1' src={item1}></img>
@@ -68,9 +70,9 @@ const add = () => {
         </div>
         </div>
 
-</div>
     </div>
-    </>
+</div>
+</>
  )
 }
 

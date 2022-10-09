@@ -1,31 +1,20 @@
 import {Link} from 'react-router-dom'
 import logo from './assets/icons8-compass-east-100.png'
-import basketIcon from './assets/basket.png'
 import Header from  './header'
 import Cartlogic from './cartlogic'
 import { useState, createContext, useContext, useEffect } from "react";
 import { MakeContext } from './RouteSwitch'
 import item1 from './assets/item1.jpg'
+import binIcon from './assets/bin.png'
+
 
 
 
 function ShoppingCart() {
 
     const [importedItem, setValue] = useContext(MakeContext)
-    const [item1, setImportedValue] = useState(importedItem)
+    // const [item1, setImportedValue] = useState(importedItem)
 
-
-
-
-const resetArray = () => {
-    const indexValue = importedItem.map(importedItem => importedItem.price).indexOf('£143.99');
-    const removeFromArray = importedItem.pop(indexValue)
-    setValue([...importedItem, removeFromArray])
-    console.log(importedItem)
-    console.log(item1)
-
-
-}
 // useEffect(() => {setImportedValue(importedValue)}, [item1])
 
     return (  
@@ -38,13 +27,15 @@ const resetArray = () => {
                 <legend>    Shopping Basket    </legend>
 
             <div className='itemCartWrapper'> 
-                {item1.map((elements, index) => {
+                {importedItem.map((elements, index) => {
                 return (
                 <div key={index}>
-                    <div>{elements.item}</div>
-                    <div>{elements.price}</div>
-                    <div>{elements.quantity}</div>
-                    <button onClick={() => {resetArray()}}>Remove</button>
+                    <div>Name - {elements.item}</div>
+                    <div>Price - {elements.price}</div>
+                    <div>Quantity - {elements.quantity}</div>
+                    
+                    <div>{elements.button(index)}</div>
+                    {/* <button onClick={() => {resetArray(index)}}>Remove</button> */}
             </div>
 
             )
