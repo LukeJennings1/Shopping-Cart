@@ -3,6 +3,8 @@ import basketIcon from './assets/basket.png';
 import storePage from './store';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import styles from 'react-awesome-slider/src/styles';
+import Modal from './modal'
 
 
 function Header() {
@@ -16,14 +18,19 @@ const [mouseEnter, setMouseEnter] = useState(false)
     }
     function Exit(e){
         console.log(mouseEnter)
-        setMouseEnter(false)
-        e.target.style.color = 'red';
+        // setMouseEnter(false)
+        e.target.style.background = 'red';
+        if (mouseEnter === false){
+            return styles.modal.background = 'red';
+        }
 
     }
 
 
-
     return (
+        <>
+    {mouseEnter && <Modal closeModal = {setMouseEnter}/>}
+
         <div className="HeaderWrapper">
             <div id='left-side-wrapper'>
                 <div id="websiteTitle">Point East Clothing</div>
@@ -42,10 +49,11 @@ const [mouseEnter, setMouseEnter] = useState(false)
                 <Link to={'/Basket'}>
                 <input type='image' className='shoppingBasketIcon' src={basketIcon}></input> 
                 </Link>
-
               
             </div>
+
         </div>
+        </>
     )
 }
 

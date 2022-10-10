@@ -112,4 +112,11 @@ html, body {
 #store-button {
   color: red;
 }
-
+.Modal {   
+  height: 450px;
+  width: 100%;
+  position: absolute; 
+  margin-top: 70px;
+  background-color: aqua;
+  z-index: 5;
+}
