@@ -14,18 +14,7 @@ const [mouseEnter, setMouseEnter] = useState(false)
     function Enter(e){
         console.log(e.target)
         setMouseEnter(true)
-        e.target.style.color = 'blue';
     }
-    function Exit(e){
-        console.log(mouseEnter)
-        // setMouseEnter(false)
-        e.target.style.background = 'red';
-        if (mouseEnter === false){
-            return styles.modal.background = 'red';
-        }
-
-    }
-
 
     return (
         <>
@@ -44,7 +33,7 @@ const [mouseEnter, setMouseEnter] = useState(false)
 
             <div className="linkWrapper">
                 <Link to={'/store'}>
-                <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} onMouseLeave ={(e) => {Exit(e)}}>Store</button> 
+                <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} >Store</button> 
                 </Link>
                 <Link to={'/Basket'}>
                 <input type='image' className='shoppingBasketIcon' src={basketIcon}></input> 

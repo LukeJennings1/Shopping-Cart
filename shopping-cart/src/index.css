@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Edu+SA+Beginner:wght@700&family=Inconsolata:wght@300&family=Josefin+Sans&family=Kdam+Thmor+Pro&family=Oldenburg&family=Pacifico&family=Roboto:wght@700&display=swap');
 
 *{
-  /* background-color: rgb(20, 20, 20); */
   margin: 0;
   font-family:'Oldenburg', cursive;;
 }
@@ -24,9 +23,9 @@ html, body {
 #logo{
   height: 70px;
   width: 70px;
-  margin-top: 5px;
-  /* position: absolute; */
- 
+  margin-top: -35px;
+  margin-left: -50px;
+  position: absolute;
 }
 .linkWrapper{
   display: flex;
@@ -34,10 +33,9 @@ html, body {
 }
 #left-side-wrapper {
   display: flex;
-  
 }
 .middleBanner{
-  z-index: 3;
+  z-index: 2;
 }
 .awssld  {
   height: 100vh;
@@ -45,7 +43,7 @@ html, body {
   background-color: black;
 }
 .firstBannerWrapper, .secondBannerWrapper {
-  z-index: 3;
+  z-index: 2;
 }
 .awssld__next, .awssld__prev {
   --organic-arrow-color: #ffffff;
@@ -103,7 +101,7 @@ html, body {
 }
 .item {
   margin-top: 10px;
-  z-index: 4;
+  z-index: 2;
 }
 .itemBinIcon {
   width: 30px;
@@ -111,12 +109,55 @@ html, body {
 }
 #store-button {
   color: red;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 .Modal {   
   height: 450px;
   width: 100%;
   position: absolute; 
   margin-top: 70px;
-  background-color: aqua;
-  z-index: 5;
+  background-color: rgb(219, 219, 219);
+  z-index: 10;
+  opacity: 98%;
+}
+.Modal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-top-row, .modal-bottom-row {
+  display: flex;
+  flex-direction: row;
+  gap: 75px;
+  justify-content: center;
+  align-items: center;
+}
+.modal-bottom-row {
+gap: 25px;
+}
+.clothesImages {
+  height: 100px;
+  width: 100%;
+}
+.modal-top-row-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-bottom-row-items {
+  margin-top: 50px;
+  display: flex;
+  border: solid rgb(68, 68, 68);
+  height: 200px;
+  width: 261px;
+}
+.feature-boxes {
+  box-sizing: content-box;
 }
