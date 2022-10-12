@@ -3,7 +3,6 @@ import basketIcon from './assets/basket.png';
 import storePage from './store';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import styles from 'react-awesome-slider/src/styles';
 import Modal from './modal'
 
 
@@ -31,8 +30,8 @@ const [mouseEnter, setMouseEnter] = useState(false)
                 </div>
 
             <div className="linkWrapper">
-                <Link to={'/store'}>
-                <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} onClick = {() => { setMouseEnter(false)} } >Store</button> 
+                <Link to={'/store'} className='store'>
+                <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} onClick = {() => { setMouseEnter(false)} }> Store</button> 
                 </Link>
                 <Link to={'/Basket'}>
                 <input type='image' className='shoppingBasketIcon' src={basketIcon}></input> 
