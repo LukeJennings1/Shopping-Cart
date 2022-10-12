@@ -14,8 +14,16 @@ function ShoppingCart() {
 
     const [importedItem, setValue] = useContext(MakeContext)
     // const [item1, setImportedValue] = useState(importedItem)
+    console.log(importedItem)
 
-// useEffect(() => {setImportedValue(importedValue)}, [item1])
+
+    const resetArray = (element) => {
+    
+        setValue(importedItem.filter(item => item.id != element.id))
+        console.log(importedItem.filter(item => item.id != element.id))
+        // console.log(...importedItem)
+        
+    }
 
     return (  
     <>
@@ -33,9 +41,9 @@ function ShoppingCart() {
                     <div>Name - {elements.item}</div>
                     <div>Price - {elements.price}</div>
                     <div>Quantity - {elements.quantity}</div>
-                    
-                    <div>{elements.button(index)}</div>
-                    {/* <button onClick={() => {resetArray(index)}}>Remove</button> */}
+
+                    {/* <div>{elements.button(index)}</div> */}
+                    <button onClick={() => {resetArray(elements)}}>Remove</button>
             </div>
 
             )
