@@ -12,7 +12,6 @@ function Header() {
 const [mouseEnter, setMouseEnter] = useState(false)
 
     function Enter(e){
-        console.log(e.target)
         setMouseEnter(true)
     }
 
@@ -33,7 +32,7 @@ const [mouseEnter, setMouseEnter] = useState(false)
 
             <div className="linkWrapper">
                 <Link to={'/store'}>
-                <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} >Store</button> 
+                <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} onClick = {() => { setMouseEnter(false)} } >Store</button> 
                 </Link>
                 <Link to={'/Basket'}>
                 <input type='image' className='shoppingBasketIcon' src={basketIcon}></input> 
