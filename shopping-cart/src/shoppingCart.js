@@ -6,6 +6,8 @@ import { useState, createContext, useContext, useEffect } from "react";
 import { MakeContext } from './RouteSwitch'
 import item1 from './assets/item1.jpg'
 import binIcon from './assets/bin.png'
+import Footer from './footer'
+
 
 
 
@@ -41,6 +43,7 @@ function ShoppingCart() {
                     <div>Name - {elements.item}</div>
                     <div>Price - {elements.price}</div>
                     <div>Quantity - {elements.quantity}</div>
+                    <div>Size - {elements.size}</div>
 
                     {/* <div>{elements.button(index)}</div> */}
                     <button onClick={() => {resetArray(elements)}}>Remove</button>
@@ -53,6 +56,7 @@ function ShoppingCart() {
             </fieldset>
             
            </div>
+           <Footer />
     </>
     )
         

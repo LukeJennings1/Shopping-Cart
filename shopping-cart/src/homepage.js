@@ -2,6 +2,8 @@
 import Header from './header'
 import Middle from './middle'
 import { createContext } from "react";
+import Footer from './footer'
+
 
 function Homepage() {
 
@@ -10,7 +12,7 @@ function Homepage() {
         <div className="homePageWrapper">
                 <Header />
                 <Middle />
-
+                <Footer />
                     </div>
     )
 }
