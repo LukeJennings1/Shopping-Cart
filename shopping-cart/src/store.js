@@ -43,6 +43,8 @@ const [importedValue, setImportedValue] = useContext(MakeContext)
 
 const [itemQuantity, setItemQuantity] = useState(1)
 const [size, setSize] = useState()
+
+
 const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the basket value
 
 let itemNum1 = {
@@ -66,12 +68,16 @@ let itemNum3 = {
     price: '£' + 120.00,
     quantity: itemQuantity,
     id: 3,
+    size: size,
+
 }
 let itemNum4 = {
     item: 'Shooting Jacket',
     price: '£' + 185.00,
     quantity: itemQuantity,
     id: 4,
+    size: size,
+
 }
 let itemNum5 = {
     item: 'Elder Henley T-Shirt',
@@ -179,9 +185,7 @@ function updateImportedValue(input) {
     )
     }
 }
-function sizeChoice(target) {
-    setSize(target)
-}
+
  return (
 <>
 <Header />
@@ -194,25 +198,17 @@ function sizeChoice(target) {
             <div className='individual-item'>Point East PeaCoat
                 <img className = 'individual-item-image' src={jacket1}></img>
                 <div className='lower-item-row'>
-                <select name='Size' value={size} onChange={(e) => {sizeChoice(e.target.value)}}>
-                    <option value='XS'>XS</option>
-                    <option value='S'>S</option>
-                    <option value='M'>M</option>
-                    <option value='L'>L</option>
-                    <option value='XL'>XL</option>
-                </select>                 £360.00
+                <Sizedropdownmenu size = { setSize }/>
+
+                         £360.00
                 <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Pioneers Jacket
                 <img className = 'individual-item-image' src={jacket2}></img>
                 <div className='lower-item-row'>
-                <select name='Size' value={size} onChange={(e) => {setSize(e.target.value)}}>
-                    <option value='XS'>XS</option>
-                    <option value='S'>S</option>
-                    <option value='M'>M</option>
-                    <option value='L'>L</option>
-                    <option value='XL'>XL</option>
-                </select>                £125.00
+                <Sizedropdownmenu/>
+
+                          £125.00
                  <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum2)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div> 
             <div className='individual-item'>Bowling Jacket
@@ -359,6 +355,7 @@ function sizeChoice(target) {
     <Footer />
 </>
  )
+ 
 }
 
 export default Store;
