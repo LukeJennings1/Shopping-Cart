@@ -2,13 +2,15 @@ import logo from './assets/icons8-compass-east-100.png';
 import basketIcon from './assets/basket.png';
 import storePage from './store';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Modal from './modal'
-
+import {BasketNum} from './RouteSwitch'
 
 function Header() {
 
 const [mouseEnter, setMouseEnter] = useState(false)
+const [itemNum, SetItemNum] = useContext(BasketNum)
+
 
     function Enter(e){
         setMouseEnter(true)
@@ -34,8 +36,11 @@ const [mouseEnter, setMouseEnter] = useState(false)
                 <button id = 'store-button' onMouseEnter={(e) => {Enter(e)}} onClick = {() => { setMouseEnter(false)} }> Store</button> 
                 </Link>
                 <Link to={'/Basket'}>
-                <input type='image' className='shoppingBasketIcon' src={basketIcon}></input> 
+                <input type='image' className='shoppingBasketIcon' src={basketIcon}></input>
                 </Link>
+                <div id = 'basket-number-value'>{itemNum}</div>
+                
+
               
             </div>
 

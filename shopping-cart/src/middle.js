@@ -17,14 +17,14 @@ function Middle() {
     return (
     <div className='sliderWrapper'>
     <AutoplaySlider  
-    // play={true}
+    play={true}
     cancelOnInteraction={true} // should stop playing on user interaction
-    // interval={5000} 
+    interval={5000} 
     bullets = {false} 
     animation="cubeAnimation">
         <div className='firstBannerWrapper' data-src={firstSliderBanner}>
     <Link to={'/store'}>
-    <button className= 'sustainability-info-button' >View the full range</button>
+    <button className= 'sustainability-info-button' >- View the full range - </button>
     </Link>
         </div>
         <div className='secondBannerWrapper' data-src={secondSliderBanner}>

@@ -15,14 +15,16 @@ import Knitwear from './Knitwear'
 
 
 export const MakeContext = createContext(null); // null is the default value. 
-
+export const BasketNum = createContext(0);
 
 function RouteSwitch()  {
     const [value, setValue] = useState([])
+    const [itemNum, SetItemNum] = useState([])
 
 
     return (
         <BrowserRouter>
+        <BasketNum.Provider value = {[itemNum, SetItemNum]}>
         <MakeContext.Provider value = {[value, setValue]}>
             <Routes>
                 <Route path='/' element = {<App />}></Route>
@@ -43,6 +45,7 @@ function RouteSwitch()  {
 
             </Routes>
             </MakeContext.Provider>
+            </BasketNum.Provider>
         </BrowserRouter>
     )
 }

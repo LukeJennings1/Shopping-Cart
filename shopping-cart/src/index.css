@@ -15,11 +15,13 @@ html, body {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   z-index: 3;
   color: white;
+  padding-bottom: 4px;
   padding-top: 5px;
+  
 }
 #logo{
   height: 70px;
@@ -30,6 +32,7 @@ html, body {
 }
 .linkWrapper{
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 #left-side-wrapper {
@@ -69,18 +72,18 @@ html, body {
   height: 100vh;
 }
 .sustainability-info-button  {
-  background-color: #f7f7f7;
+  background-color: rgb(190, 113, 25);
   border: none;
-  color: rgb(0, 0, 0);
+  color: rgb(252, 252, 252);
   padding: 7px 16px;
   text-align: center;
   cursor: pointer; 
   display: inline-block;
   font-size: 16px;
-  box-shadow: 1px 1px 7px 1px #000000;
+  opacity: 90%;
 }
 .sustainability-info-button:hover {
-  opacity: 90%;
+  opacity: 100%;
 }
 
 
@@ -104,7 +107,7 @@ html, body {
 .shoppingBasketIcon {
   height: 30px;
   width: 30px;
-  margin-top: -5px;
+  margin-top: 5px;
   padding-left: 15px;
 }
 .item1Wrapper{
@@ -224,8 +227,6 @@ gap: 25px;
   background-color: rgb(228, 228, 228);
   box-shadow: 0px 16px 15px 1px #000000
 }
-
-
 .individual-item-image{
   height: 80%;
   width: 80%;
@@ -254,13 +255,12 @@ gap: 25px;
 }
 .footer-wrapper {
   display: flex;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   position: absolute;
   width: 100%;
   justify-content: center;
   padding-top: 4px;
-  opacity: 50%;
 }
 #github-logo {
   height: 30px;
@@ -276,9 +276,20 @@ gap: 25px;
 
 #all-items-header {
   padding-bottom: 5px;
-  padding-top: 100px;
+  padding-top: 120px;
   font-size: 50px;
   color: white;
   display: flex;
   justify-content: center;
 } 
+.basket-icon-wrapper {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: end;
+}
+#basket-number-value {
+  margin-left: 110px;
+  margin-top: 2px;
+  position: absolute;
+}

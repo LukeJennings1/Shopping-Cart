@@ -7,7 +7,7 @@ import { MakeContext } from './RouteSwitch'
 import item1 from './assets/item1.jpg'
 import binIcon from './assets/bin.png'
 import Footer from './footer'
-
+import {BasketNum} from './RouteSwitch'
 
 
 
@@ -15,6 +15,8 @@ import Footer from './footer'
 function ShoppingCart() {
 
     const [importedItem, setValue] = useContext(MakeContext)
+    const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the basket value
+
     // const [item1, setImportedValue] = useState(importedItem)
     console.log(importedItem)
 
@@ -23,6 +25,7 @@ function ShoppingCart() {
     
         setValue(importedItem.filter(item => item.id != element.id))
         console.log(importedItem.filter(item => item.id != element.id))
+        SetItemNum(importedItem.length - 1)
         // console.log(...importedItem)
         
     }

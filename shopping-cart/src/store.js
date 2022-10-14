@@ -33,7 +33,7 @@ import knitwear4 from './assets/knit4.png'
 import addtobasket from './assets/addtobasket.png'
 import Sizedropdownmenu from './sizedropdown'
 import Footer from './footer'
-
+import { BasketNum } from './RouteSwitch'
 
 
 
@@ -43,6 +43,7 @@ const [importedValue, setImportedValue] = useContext(MakeContext)
 
 const [itemQuantity, setItemQuantity] = useState(1)
 const [size, setSize] = useState()
+const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the basket value
 
 let itemNum1 = {
 item: 'Point East PeaCoat',
@@ -64,13 +65,117 @@ let itemNum3 = {
     item: 'Bowling Jacket',
     price: '£' + 120.00,
     quantity: itemQuantity,
-    id: 2,
+    id: 3,
+}
+let itemNum4 = {
+    item: 'Shooting Jacket',
+    price: '£' + 185.00,
+    quantity: itemQuantity,
+    id: 4,
+}
+let itemNum5 = {
+    item: 'Elder Henley T-Shirt',
+    price: '£' + 95.00,
+    quantity: itemQuantity,
+    id: 5,
+}
+let itemNum6 = {
+    item: 'Old Man Dudley T-Shirt',
+    price: '£' + 65.00,
+    quantity: itemQuantity,
+    id: 6,
+}
+let itemNum7 = {
+    item: 'Everyday Miner T-Shirt',
+    price: '£' + 45.00,
+    quantity: itemQuantity,
+    id: 7,
+}
+let itemNum8 = {
+    item: 'Grandpa T-Shirt',
+    price: '£' + 55.00,
+    quantity: itemQuantity,
+    id: 8,
+}
+let itemNum9 = {
+    item: 'Dutch Casual Shirt',
+    price: '£' + 110.00,
+    quantity: itemQuantity,
+    id: 9,
+}
+let itemNum10 = {
+    item: 'Lumberjack Shirt',
+    price: '£' + 110.00,
+    quantity: itemQuantity,
+    id: 10,
+}
+let itemNum11 = {
+    item: 'Cotton Winter Shirt',
+    price: '£' + 140.00,
+    quantity: itemQuantity,
+    id: 11,
+}
+let itemNum12 = {
+    item: 'Casual Open Shirt',
+    price: '£' + 110.00,
+    quantity: itemQuantity,
+    id: 12,
+}
+let itemNum13 = {
+    item: 'Frontier Jeans',
+    price: '£' + 130.00,
+    quantity: itemQuantity,
+    id: 13,
+}
+let itemNum14 = {
+    item: 'Corduroy Bottoms',
+    price: '£' + 130.00,
+    quantity: itemQuantity,
+    id: 14,
+}
+let itemNum15 = {
+    item: 'Silky Adventurers Jeans',
+    price: '£' + 110.00,
+    quantity: itemQuantity,
+    id: 15,
+}
+let itemNum16 = {
+    item: 'Pioneer Jeans',
+    price: '£' + 175.00,
+    quantity: itemQuantity,
+    id: 16,
+}
+let itemNum17 = {
+    item: 'Patched Cardigan',
+    price: '£' + 150.00,
+    quantity: itemQuantity,
+    id: 17,
+}
+let itemNum18 = {
+    item: 'Knitted Cardigan',
+    price: '£' + 160.00,
+    quantity: itemQuantity,
+    id: 18,
+}
+let itemNum19 = {
+    item: 'Fleeced Top',
+    price: '£' + 125.00,
+    quantity: itemQuantity,
+    id: 19,
+}
+let itemNum20 = {
+    item: 'Varsity Top',
+    price: '£' + 125.00,
+    quantity: itemQuantity,
+    id: 20,
 }
 function updateImportedValue(input) {
     var index = importedValue.map(importedValue => importedValue.item).indexOf(input.item);
     if (index < 0) {
     return (
-        setImportedValue([...importedValue, input])
+        setImportedValue([...importedValue, input]),
+        SetItemNum(importedValue.length + 1)
+
     )
     }
 }
@@ -122,7 +227,7 @@ function sizeChoice(target) {
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £185.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum4)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
         </div>
         <div className='Tops'>
@@ -131,7 +236,7 @@ function sizeChoice(target) {
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £95.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum5)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
 
             </div>
             <div className='individual-item'>Old Man Dudley T-Shirt
@@ -139,21 +244,21 @@ function sizeChoice(target) {
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £65.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum6)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Everyday Miner T-Shirt
                 <img className = 'individual-item-image' src={top3}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £45.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum7)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Grandpa T-Shirt
                 <img className = 'individual-item-image' src={top4}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £55.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum8)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
         </div>
 
@@ -163,28 +268,28 @@ function sizeChoice(target) {
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £110.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum9)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Lumberjack Shirt
                 <img className = 'individual-item-image' src={shirt2}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £110.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum10)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Cotton Winter Shirt 
                 <img className = 'individual-item-image' src={shirt3}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £140.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum11)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Casual Open Shirt
                 <img className = 'individual-item-image' src={shirt4}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £110.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum12)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
         </div>
 
@@ -194,28 +299,28 @@ function sizeChoice(target) {
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £130.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum13)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Corduroy Bottoms
                 <img className = 'individual-item-image' src={bottom2}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £130.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum14)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Silky Adventurers Jeans
                 <img className = 'individual-item-image' src={bottom3}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £110.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum15)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Pioneer Jeans
                 <img className = 'individual-item-image' src={bottom4}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £175.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum16)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
         </div>
 
@@ -225,28 +330,28 @@ function sizeChoice(target) {
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £150.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum17)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Knitted Cardigan
                 <img className = 'individual-item-image' src={knitwear2}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £160.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum18)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Fleeced Top
                 <img className = 'individual-item-image' src={knitwear3}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £125.00 
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum19)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
             <div className='individual-item'>Varsity Top
                 <img className = 'individual-item-image' src={knitwear4}></img>
                 <div className='lower-item-row'>
                 <Sizedropdownmenu/>
                 £125.00
-                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum1)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
+                <button className='add-to-basket-icon' onClick = {() => {updateImportedValue(itemNum20)}} ><img src={addtobasket} className='add-to-basket-icon'></img></button></div>
             </div>
         </div>
     </div>
