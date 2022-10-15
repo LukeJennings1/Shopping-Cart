@@ -7,7 +7,7 @@ import { MakeContext } from './RouteSwitch'
 import item1 from './assets/item1.jpg'
 import binIcon from './assets/bin.png'
 import Footer from './footer'
-import {BasketNum} from './RouteSwitch'
+import { BasketNum } from './RouteSwitch'
 
 
 
@@ -37,19 +37,31 @@ function ShoppingCart() {
         <div className='ShoppingCartBackground'>
             
             <fieldset className='ShoppingCartWrapper'>
-                <legend>    Shopping Basket    </legend>
+                {/* <legend>    Shopping Basket    </legend> */}
 
             <div className='itemCartWrapper'> 
                 {importedItem.map((elements, index) => {
                 return (
                 <div key={index}>
-                    <div>Name - {elements.item}</div>
-                    <div>Price - {elements.price}</div>
-                    <div>Quantity - {elements.quantity}</div>
-                    <div>Size - {elements.size}</div>
 
-                    {/* <div>{elements.button(index)}</div> */}
-                    <button onClick={() => {resetArray(elements)}}>Remove</button>
+                <div className='item-details'>
+                    <img className = 'item-photo' src={elements.img}></img>
+                        <div className='item-spacer'></div>
+                        <div className='item-wrapper'>
+                            <div>Name - {elements.item}</div>
+                            <div>Price - {elements.price}</div>
+                            <div>Quantity - {elements.quantity}</div>
+                            <div>Size - {elements.size}</div>
+                        </div>
+
+                    <div className='item-spacer'></div>
+
+                    <button id='remove-button' onClick={() => {resetArray(elements)}}>
+                    <img id = 'remove-button-icon' src={binIcon}></img>
+                    </button>
+                </div>
+                    
+            
             </div>
 
             )

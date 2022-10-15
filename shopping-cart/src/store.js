@@ -52,7 +52,8 @@ item: 'Point East PeaCoat',
 price: '£' + 360.00,
 quantity: itemQuantity,
 id: 0,
-size: size
+size: size,
+img: jacket1
 }
 // its deleting its own array value and all others above it
 // when we add the index we are essentially saying to slice anything from the index number upwards (from,to)
@@ -62,6 +63,7 @@ let itemNum2 = {
     quantity: itemQuantity,
     id: 1,
     size: size,
+    img: jacket2
 }
 let itemNum3 = {
     item: 'Bowling Jacket',
@@ -69,6 +71,7 @@ let itemNum3 = {
     quantity: itemQuantity,
     id: 3,
     size: size,
+    img: jacket3
 
 }
 let itemNum4 = {
@@ -77,7 +80,7 @@ let itemNum4 = {
     quantity: itemQuantity,
     id: 4,
     size: size,
-
+    img: jacket4
 }
 let itemNum5 = {
     item: 'Elder Henley T-Shirt',
@@ -85,6 +88,7 @@ let itemNum5 = {
     quantity: itemQuantity,
     id: 5,
     size: size,
+    img: top1
 }
 let itemNum6 = {
     item: 'Old Man Dudley T-Shirt',
@@ -92,6 +96,7 @@ let itemNum6 = {
     quantity: itemQuantity,
     id: 6,
     size: size,
+    img: top2
 }
 let itemNum7 = {
     item: 'Everyday Miner T-Shirt',
@@ -99,6 +104,7 @@ let itemNum7 = {
     quantity: itemQuantity,
     id: 7,
     size: size,
+    img: top3
 
 }
 let itemNum8 = {
@@ -107,6 +113,7 @@ let itemNum8 = {
     quantity: itemQuantity,
     id: 8,
     size: size,
+    img: top4
 
 }
 let itemNum9 = {
@@ -115,6 +122,7 @@ let itemNum9 = {
     quantity: itemQuantity,
     id: 9,
     size: size,
+    img: shirt1
 
 }
 let itemNum10 = {
@@ -123,6 +131,7 @@ let itemNum10 = {
     quantity: itemQuantity,
     id: 10,
     size: size,
+    img: shirt2
 
 }
 let itemNum11 = {
@@ -131,6 +140,7 @@ let itemNum11 = {
     quantity: itemQuantity,
     id: 11,
     size: size,
+    img: shirt3
 
 }
 let itemNum12 = {
@@ -139,6 +149,7 @@ let itemNum12 = {
     quantity: itemQuantity,
     id: 12,
     size: size,
+    img: shirt4
 
 }
 let itemNum13 = {
@@ -147,6 +158,7 @@ let itemNum13 = {
     quantity: itemQuantity,
     id: 13,
     size: size,
+    img: bottom1
 
 }
 let itemNum14 = {
@@ -155,6 +167,7 @@ let itemNum14 = {
     quantity: itemQuantity,
     id: 14,
     size: size,
+    img: bottom2
 
 }
 let itemNum15 = {
@@ -163,6 +176,7 @@ let itemNum15 = {
     quantity: itemQuantity,
     id: 15,
     size: size,
+    img: bottom3
 
 }
 let itemNum16 = {
@@ -171,6 +185,7 @@ let itemNum16 = {
     quantity: itemQuantity,
     id: 16,
     size: size,
+    img: bottom4
 
 }
 let itemNum17 = {
@@ -179,6 +194,7 @@ let itemNum17 = {
     quantity: itemQuantity,
     id: 17,
     size: size,
+    img: knitwear1
 
 }
 let itemNum18 = {
@@ -187,6 +203,7 @@ let itemNum18 = {
     quantity: itemQuantity,
     id: 18,
     size: size,
+    img: knitwear2
 
 }
 let itemNum19 = {
@@ -195,6 +212,7 @@ let itemNum19 = {
     quantity: itemQuantity,
     id: 19,
     size: size,
+    img: knitwear3
 
 }
 let itemNum20 = {
@@ -203,6 +221,7 @@ let itemNum20 = {
     quantity: itemQuantity,
     id: 20,
     size: size,
+    img: knitwear4
 
 }
 function updateImportedValue(input) {
