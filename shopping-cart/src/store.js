@@ -50,17 +50,16 @@ const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the
 let itemNum1 = {
 item: 'Point East PeaCoat',
 price: '£' + 360.00,
-quantity: itemQuantity,
 id: 0,
 size: size,
-img: jacket1
+img: jacket1,
+quantity: 1,
+
 }
-// its deleting its own array value and all others above it
-// when we add the index we are essentially saying to slice anything from the index number upwards (from,to)
 let itemNum2 = {
     item: 'Pioneers Jacket',
     price: '£' + 125.00,
-    quantity: itemQuantity,
+    quantity: 1,
     id: 1,
     size: size,
     img: jacket2
