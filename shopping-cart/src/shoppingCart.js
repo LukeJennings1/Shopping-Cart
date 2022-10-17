@@ -16,51 +16,66 @@ function ShoppingCart() {
 
     const [importedItem, setValue] = useContext(MakeContext)
     const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the basket value
-    const [itemQuantity, setItemQuantity] = useState(1)
+    // const [itemQuantity, setItemQuantity] = useState(1)
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
-
-
-    // const [item1, setImportedValue] = useState(importedItem)
-    console.log(importedItem)
-
-
+    const [sumPrice, setTotal] = useState(0)
 
 
     const resetArray = (element) => {
     
         setValue(importedItem.filter(item => item.id != element.id))
-        console.log(importedItem.filter(item => item.id != element.id))
         SetItemNum(importedItem.length - 1)
-        // console.log(...importedItem)
     }
     const subtract = (element) => {
-
         var index = importedItem.map(importedItem => importedItem.id).indexOf(element.id);
+
+        if (importedItem[index].quantity < 2){
+            return null 
+        } else {
         return (
         importedItem[index].quantity = importedItem[index].quantity - 1,
         forceUpdate()
         )
+        }
     } 
     const add = (element) => {
         var index = importedItem.map(importedItem => importedItem.id).indexOf(element.id);
-        // console.log(importedItem[index].quantity = importedItem[index].quantity + 1)
-        
         return (
             importedItem[index].quantity = importedItem[index].quantity + 1,
             forceUpdate()
-
         )
     }   
-   
+
+    const price = () => {
+        if (importedItem.length === 0){
+            return (
+                setTotal(0)
+            )
+        }
+        else {  
+            const arrayofprices = importedItem.map(importedItem => importedItem.price)
+            const total = arrayofprices.reduce((x,y) =>  x + y)
+            console.log(arrayofprices)
+            console.log(total)
+            return (      
+                setTotal(total)
+            )
+        }
+    }
+useEffect(() => {
+    price()
+}, [importedItem]) // this calls the price() function when it detects a change to the item array. so, if an item has been added or remove
+// it will call the price() function which adds together the price field in each item object. This updates the price. 
+ 
+    
     return (  
 
     <>
     <Header />
-
         <div className='ShoppingCartBackground'>
             
             <fieldset className='ShoppingCartWrapper'>
-                {/* <legend>    Shopping Basket    </legend> */}
+                <legend>    Shopping Cart  </legend>
 
             <div className='itemCartWrapper'> 
                 {importedItem.map((elements, index) => {
@@ -72,12 +87,12 @@ function ShoppingCart() {
                         <div className='item-spacer'></div>
                         <div className='item-wrapper'>
                             <div>Name - {elements.item}</div>
-                            <div>Price - {elements.price}</div>
+                            <div>Price - £{elements.price}.00 </div>
                                 <div className='item-quantity-wrapper'>
-                                <div>Quantity - 
-                                <button onClick={() => {subtract(elements)}} >-</button>
+                                <div id = 'quantity'>Quantity - 
+                                <button className = 'add-subtract-buttons' onClick={() => {subtract(elements)}} >-</button>
                                      {elements.quantity}
-                                <button onClick={() => {add(elements)}} >+</button>
+                                <button className = 'add-subtract-buttons' onClick={() => {add(elements)}} >+</button>
 
                                 
                                 </div>
@@ -100,7 +115,10 @@ function ShoppingCart() {
 
 
             </fieldset>
-            
+            <div className='checkout-wrapper'>
+            <div className='subtotal'>Subtotal: £{sumPrice}</div>
+            <button id = 'checkout-button'>Checkout</button>
+            </div>
            </div>
            <Footer />
     </>

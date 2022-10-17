@@ -47,26 +47,25 @@ const [size, setSize] = useState()
 
 const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the basket value
 
-let itemNum1 = {
-item: 'Point East PeaCoat',
-price: '£' + 360.00,
-id: 0,
-size: size,
-img: jacket1,
-quantity: 1,
-
+    let itemNum1 = {
+    item: 'Point East PeaCoat',
+    price: 360.00,
+    id: 0,
+    size: size,
+    img: jacket1,
+    quantity: itemQuantity,
 }
 let itemNum2 = {
     item: 'Pioneers Jacket',
-    price: '£' + 125.00,
-    quantity: 1,
+    price: 125.00,
+    quantity: itemQuantity,
     id: 1,
     size: size,
     img: jacket2
 }
 let itemNum3 = {
     item: 'Bowling Jacket',
-    price: '£' + 120.00,
+    price: 120.00,
     quantity: itemQuantity,
     id: 3,
     size: size,
@@ -75,7 +74,7 @@ let itemNum3 = {
 }
 let itemNum4 = {
     item: 'Shooting Jacket',
-    price: '£' + 185.00,
+    price: 185.00,
     quantity: itemQuantity,
     id: 4,
     size: size,
@@ -83,7 +82,7 @@ let itemNum4 = {
 }
 let itemNum5 = {
     item: 'Elder Henley T-Shirt',
-    price: '£' + 95.00,
+    price: 95.00,
     quantity: itemQuantity,
     id: 5,
     size: size,
@@ -91,7 +90,7 @@ let itemNum5 = {
 }
 let itemNum6 = {
     item: 'Old Man Dudley T-Shirt',
-    price: '£' + 65.00,
+    price: 65.00,
     quantity: itemQuantity,
     id: 6,
     size: size,
@@ -99,7 +98,7 @@ let itemNum6 = {
 }
 let itemNum7 = {
     item: 'Everyday Miner T-Shirt',
-    price: '£' + 45.00,
+    price: 45.00,
     quantity: itemQuantity,
     id: 7,
     size: size,
@@ -108,7 +107,7 @@ let itemNum7 = {
 }
 let itemNum8 = {
     item: 'Grandpa T-Shirt',
-    price: '£' + 55.00,
+    price: 55.00,
     quantity: itemQuantity,
     id: 8,
     size: size,
@@ -117,7 +116,7 @@ let itemNum8 = {
 }
 let itemNum9 = {
     item: 'Dutch Casual Shirt',
-    price: '£' + 110.00,
+    price: 110.00,
     quantity: itemQuantity,
     id: 9,
     size: size,
@@ -126,7 +125,7 @@ let itemNum9 = {
 }
 let itemNum10 = {
     item: 'Lumberjack Shirt',
-    price: '£' + 110.00,
+    price: 110.00,
     quantity: itemQuantity,
     id: 10,
     size: size,
@@ -135,7 +134,7 @@ let itemNum10 = {
 }
 let itemNum11 = {
     item: 'Cotton Winter Shirt',
-    price: '£' + 140.00,
+    price: 140.00,
     quantity: itemQuantity,
     id: 11,
     size: size,
@@ -144,7 +143,7 @@ let itemNum11 = {
 }
 let itemNum12 = {
     item: 'Casual Open Shirt',
-    price: '£' + 110.00,
+    price: 110.00,
     quantity: itemQuantity,
     id: 12,
     size: size,
@@ -153,7 +152,7 @@ let itemNum12 = {
 }
 let itemNum13 = {
     item: 'Frontier Jeans',
-    price: '£' + 130.00,
+    price: 130.00,
     quantity: itemQuantity,
     id: 13,
     size: size,
@@ -162,7 +161,7 @@ let itemNum13 = {
 }
 let itemNum14 = {
     item: 'Corduroy Bottoms',
-    price: '£' + 130.00,
+    price: 130.00,
     quantity: itemQuantity,
     id: 14,
     size: size,
@@ -171,7 +170,7 @@ let itemNum14 = {
 }
 let itemNum15 = {
     item: 'Silky Adventurers Jeans',
-    price: '£' + 110.00,
+    price: 110.00,
     quantity: itemQuantity,
     id: 15,
     size: size,
@@ -180,7 +179,7 @@ let itemNum15 = {
 }
 let itemNum16 = {
     item: 'Pioneer Jeans',
-    price: '£' + 175.00,
+    price: 175.00,
     quantity: itemQuantity,
     id: 16,
     size: size,
@@ -189,7 +188,7 @@ let itemNum16 = {
 }
 let itemNum17 = {
     item: 'Patched Cardigan',
-    price: '£' + 150.00,
+    price: 150.00,
     quantity: itemQuantity,
     id: 17,
     size: size,
@@ -198,7 +197,7 @@ let itemNum17 = {
 }
 let itemNum18 = {
     item: 'Knitted Cardigan',
-    price: '£' + 160.00,
+    price: 160.00,
     quantity: itemQuantity,
     id: 18,
     size: size,
@@ -207,7 +206,7 @@ let itemNum18 = {
 }
 let itemNum19 = {
     item: 'Fleeced Top',
-    price: '£' + 125.00,
+    price: 125.00,
     quantity: itemQuantity,
     id: 19,
     size: size,
@@ -216,7 +215,7 @@ let itemNum19 = {
 }
 let itemNum20 = {
     item: 'Varsity Top',
-    price: '£' + 125.00,
+    price: 125.00,
     quantity: itemQuantity,
     id: 20,
     size: size,

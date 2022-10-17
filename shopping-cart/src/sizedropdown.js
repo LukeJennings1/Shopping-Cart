@@ -11,7 +11,6 @@ function Sizedropdown (props) {
 
         <div>
                 <select name='Size' onChange={(e) => sizeChoice(e.target.value)}>
-                <option value="" selected disabled hidden >Size</option>
                     <option value='XS'>XS</option>
                     <option value='S'>S</option>
                     <option value='M'>M</option>
