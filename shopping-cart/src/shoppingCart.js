@@ -8,7 +8,7 @@ import item1 from './assets/item1.jpg'
 import binIcon from './assets/bin.png'
 import Footer from './footer'
 import { BasketNum } from './RouteSwitch'
-
+import notyetmade from './notyetmade'
 
 
 
@@ -121,7 +121,9 @@ useEffect(() => {
             </fieldset>
             <div className='checkout-wrapper'>
             <div className='subtotal'>Subtotal: £{sumPrice}</div>
+            <Link to={'/Notyetmade'}>
             <button id = 'checkout-button'>Checkout</button>
+            </Link>
             </div>
            </div>
            <Footer />

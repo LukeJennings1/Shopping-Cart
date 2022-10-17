@@ -12,7 +12,7 @@ import Tops from './Tops';
 import Shirts from './Shirts';
 import Bottoms from './Bottoms'
 import Knitwear from './Knitwear'
-
+import Notyetmade from './notyetmade'
 
 export const MakeContext = createContext(null); // null is the default value. 
 export const BasketNum = createContext(0);
@@ -42,6 +42,9 @@ function RouteSwitch()  {
                 <Route path= 'Bottoms' element = {<Bottoms />}></Route>
 
                 <Route path= 'Knitwear' element = {<Knitwear />}></Route>
+
+                <Route path= 'Notyetmade' element = {<Notyetmade />}></Route>
+
 
             </Routes>
             </MakeContext.Provider>
