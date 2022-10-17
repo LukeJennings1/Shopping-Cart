@@ -19,6 +19,7 @@ function ShoppingCart() {
     // const [itemQuantity, setItemQuantity] = useState(1)
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
     const [sumPrice, setTotal] = useState(0)
+    const [priceUpdate, setPriceUpdate] = useState()
 
 
     const resetArray = (element) => {
@@ -27,26 +28,31 @@ function ShoppingCart() {
         SetItemNum(importedItem.length - 1)
     }
     const subtract = (element) => {
-        var index = importedItem.map(importedItem => importedItem.id).indexOf(element.id);
+        let index = importedItem.map(importedItem => importedItem.id).indexOf(element.id);
 
         if (importedItem[index].quantity < 2){
             return null 
         } else {
         return (
         importedItem[index].quantity = importedItem[index].quantity - 1,
+        importedItem[index].price = importedItem[index].baseprice * importedItem[index].quantity,
+        setPriceUpdate(importedItem[index].baseprice * importedItem[index].quantity),
         forceUpdate()
         )
         }
     } 
     const add = (element) => {
-        var index = importedItem.map(importedItem => importedItem.id).indexOf(element.id);
+        let index = importedItem.map(importedItem => importedItem.id).indexOf(element.id);
+
         return (
             importedItem[index].quantity = importedItem[index].quantity + 1,
+            importedItem[index].price = importedItem[index].baseprice * importedItem[index].quantity,
+            setPriceUpdate(importedItem[index].baseprice * importedItem[index].quantity),
             forceUpdate()
         )
     }   
 
-    const price = () => {
+    const price = (element) => {
         if (importedItem.length === 0){
             return (
                 setTotal(0)
@@ -55,8 +61,6 @@ function ShoppingCart() {
         else {  
             const arrayofprices = importedItem.map(importedItem => importedItem.price)
             const total = arrayofprices.reduce((x,y) =>  x + y)
-            console.log(arrayofprices)
-            console.log(total)
             return (      
                 setTotal(total)
             )
@@ -64,7 +68,7 @@ function ShoppingCart() {
     }
 useEffect(() => {
     price()
-}, [importedItem]) // this calls the price() function when it detects a change to the item array. so, if an item has been added or remove
+}, [importedItem, priceUpdate]) // this calls the price() function when it detects a change to the item array. so, if an item has been added or remove
 // it will call the price() function which adds together the price field in each item object. This updates the price. 
  
     

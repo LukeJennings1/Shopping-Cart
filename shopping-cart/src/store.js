@@ -50,6 +50,7 @@ const [itemNum, SetItemNum] = useContext(BasketNum) // global context to set the
     let itemNum1 = {
     item: 'Point East PeaCoat',
     price: 360.00,
+    baseprice: 360.00,
     id: 0,
     size: size,
     img: jacket1,
@@ -59,6 +60,7 @@ let itemNum2 = {
     item: 'Pioneers Jacket',
     price: 125.00,
     quantity: itemQuantity,
+    baseprice: 125.00,
     id: 1,
     size: size,
     img: jacket2
