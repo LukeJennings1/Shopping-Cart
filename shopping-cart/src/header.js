@@ -26,6 +26,7 @@ const [itemNum, SetItemNum] = useContext(BasketNum)
                 </div>
 
         <div className='middleHeaderWrapper'>
+                
                 <Link to = {'/'}>
                <img id="logo"  src={logo}></img>
                 </Link>
