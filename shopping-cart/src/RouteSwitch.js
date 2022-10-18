@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import Store from './store';
@@ -23,7 +24,7 @@ function RouteSwitch()  {
 
 
     return (
-        <BrowserRouter>
+        <HashRouter>
         <BasketNum.Provider value = {[itemNum, SetItemNum]}>
         <MakeContext.Provider value = {[value, setValue]}>
             <Routes>
@@ -49,7 +50,7 @@ function RouteSwitch()  {
             </Routes>
             </MakeContext.Provider>
             </BasketNum.Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
